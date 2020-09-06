@@ -1,0 +1,25 @@
+h1.container.mx-auto.title
+  | Vietnam Go Ratings
+
+.container.mx-auto
+  .grid.grid-cols-1.md:grid-cols-2
+    table.fixed-size.mx-auto
+      thead
+        tr
+          td Nam
+      tbody
+        - @men.each_with_index do |player, index|
+          tr
+            td = index + 1
+            td = player.display_name
+            td = player.rating ? player.rating : "-"
+    table.fixed-size.mx-auto
+      thead
+        tr
+          td Nu
+      tbody
+        - @women.each_with_index do |player, index|
+          tr
+            td = index + 1
+            td = player.display_name
+            td = (player.rating != nil) ? player.rating: "-"
